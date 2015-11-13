@@ -1,0 +1,14 @@
+D:\TestProject\HttpTool\BaiduImage\bin\Debug\BaiduImage.exe
+D:\TestProject\HttpTool\BaiduImage\bin\Debug\BaiduImage.pdb
+D:\TestProject\HttpTool\BaiduImage\obj\x86\Debug\PreviewView.baml
+D:\TestProject\HttpTool\BaiduImage\obj\x86\Debug\MainWindow.g.cs
+D:\TestProject\HttpTool\BaiduImage\obj\x86\Debug\PreviewView.g.cs
+D:\TestProject\HttpTool\BaiduImage\obj\x86\Debug\App.g.cs
+D:\TestProject\HttpTool\BaiduImage\obj\x86\Debug\BaiduImage_MarkupCompile.cache
+D:\TestProject\HttpTool\BaiduImage\obj\x86\Debug\BaiduImage_MarkupCompile.lref
+D:\TestProject\HttpTool\BaiduImage\obj\x86\Debug\MainWindow.baml
+D:\TestProject\HttpTool\BaiduImage\obj\x86\Debug\BaiduImage.g.resources
+D:\TestProject\HttpTool\BaiduImage\obj\x86\Debug\BaiduImage.Properties.Resources.resources
+D:\TestProject\HttpTool\BaiduImage\obj\x86\Debug\BaiduImage.csproj.GenerateResource.Cache
+D:\TestProject\HttpTool\BaiduImage\obj\x86\Debug\BaiduImage.exe
+D:\TestProject\HttpTool\BaiduImage\obj\x86\Debug\BaiduImage.pdb

@@ -1,0 +1,12 @@
+D:\TestProject\HttpTool\WDM_Chou\bin\Release\WDM_Chou.exe.config
+D:\TestProject\HttpTool\WDM_Chou\bin\Release\WDM_Chou.exe.manifest
+D:\TestProject\HttpTool\WDM_Chou\bin\Release\WDM_Chou.application
+D:\TestProject\HttpTool\WDM_Chou\bin\Release\WDM_Chou.exe
+D:\TestProject\HttpTool\WDM_Chou\bin\Release\WDM_Chou.pdb
+D:\TestProject\HttpTool\WDM_Chou\obj\x86\Release\WDM_Chou.MainForm.resources
+D:\TestProject\HttpTool\WDM_Chou\obj\x86\Release\WDM_Chou.Properties.Resources.resources
+D:\TestProject\HttpTool\WDM_Chou\obj\x86\Release\WDM_Chou.csproj.GenerateResource.Cache
+D:\TestProject\HttpTool\WDM_Chou\obj\x86\Release\WDM_Chou.exe.manifest
+D:\TestProject\HttpTool\WDM_Chou\obj\x86\Release\WDM_Chou.application
+D:\TestProject\HttpTool\WDM_Chou\obj\x86\Release\WDM_Chou.exe
+D:\TestProject\HttpTool\WDM_Chou\obj\x86\Release\WDM_Chou.pdb

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<passenger>
+  <!-- name姓名
+  cardno 身份证
+  cardtype 证件类型
+  mobileno 电话 -->
+  <item name="测试用户1" cardno="500000000000000000" cardtype="1" mobileno="13611111111"/>
+  <item name="测试用户2" cardno="500000000000000001" cardtype="1" mobileno="13622222222"/>
+</passenger>

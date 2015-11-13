@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<train>
+  <!-- name 列车编号
+  no 系统编号
+  start 出发地
+  startcode 出发地编号
+  arrive 到达地
+  arrivecode 到达地点编号-->
+  <item name="T9" no="24000000T90I" start="北京" startcode="BJP" arrive="重庆" arrivecode="CQW"/>
+  <item name="T10" no="7700000T1000" start="重庆北" startcode="CUW" arrive="北京西" arrivecode="BXP"/>
+  
+  <item name="K1394" no="02000K139406" start="朗乡" startcode="LXB" arrive="葫芦岛" arrivecode="HLD"/>
+  <item name="K340" no="020000K3400N" start="朗乡" startcode="LXB" arrive="北京" arrivecode="BJP"/>
+  <item name="K339" no="240000K33910" start="北京" startcode="BJP" arrive="朗乡" arrivecode="LXB"/>
+  <item name="K429" no="240000K4290B" start="北京" startcode="BJP" arrive="葫芦岛" arrivecode="HLD"/>
+  <item name="K1393" no="49000K139206" start="葫芦岛北" startcode="HPD" arrive="朗乡" arrivecode="LXB"/>
+  <item name="K296" no="030000K29607" start="葫芦岛" startcode="HLD" arrive="北京" arrivecode="BJP"/>
+
+
+  <item name="Z65" no="2400000Z6507" start="北京西" startcode="BXP" arrive="南昌" arrivecode="NCG"/>
+  <item name="Z67" no="2400000Z6707" start="北京西" startcode="BXP" arrive="南昌" arrivecode="NCG"/>
+
+  <item name="K1270" no="77000K127002" start="重庆北" startcode="CUW" arrive="南昌" arrivecode="NCG"/>
+
+  <item name="T277" no="240000T27706" start="北京西" startcode="BXP" arrive="银川" arrivecode="YIJ"/>
+  
+</train>

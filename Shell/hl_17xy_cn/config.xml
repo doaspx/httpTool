@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <model name="login_info">
+    <property name="verify">
+      src=\"image.php.{1}content=(?\\d+)">
+    </property>
+  </model>
+</config>

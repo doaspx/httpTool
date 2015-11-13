@@ -1,0 +1,15 @@
+D:\TestProject\HttpTool\Shell\bin\Debug\WPF_hl_17xy_cn.exe
+D:\TestProject\HttpTool\Shell\bin\Debug\WPF_hl_17xy_cn.pdb
+D:\TestProject\HttpTool\Shell\obj\x86\Debug\MainWindow2.baml
+D:\TestProject\HttpTool\Shell\obj\x86\Debug\MainWindow.baml
+D:\TestProject\HttpTool\Shell\obj\x86\Debug\Windows\LoginWindow.baml
+D:\TestProject\HttpTool\Shell\obj\x86\Debug\MainWindow2.g.cs
+D:\TestProject\HttpTool\Shell\obj\x86\Debug\MainWindow.g.cs
+D:\TestProject\HttpTool\Shell\obj\x86\Debug\Windows\LoginWindow.g.cs
+D:\TestProject\HttpTool\Shell\obj\x86\Debug\App.g.cs
+D:\TestProject\HttpTool\Shell\obj\x86\Debug\WPF_hl_17xy_cn_MarkupCompile.cache
+D:\TestProject\HttpTool\Shell\obj\x86\Debug\WPF_hl_17xy_cn.g.resources
+D:\TestProject\HttpTool\Shell\obj\x86\Debug\WPF_hl_17xy_cn.Properties.Resources.resources
+D:\TestProject\HttpTool\Shell\obj\x86\Debug\HLTool.csproj.GenerateResource.Cache
+D:\TestProject\HttpTool\Shell\obj\x86\Debug\WPF_hl_17xy_cn.exe
+D:\TestProject\HttpTool\Shell\obj\x86\Debug\WPF_hl_17xy_cn.pdb

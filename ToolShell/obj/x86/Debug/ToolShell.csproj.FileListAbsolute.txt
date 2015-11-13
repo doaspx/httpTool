@@ -1,0 +1,11 @@
+D:\TestProject\HttpTool\ToolShell\bin\Debug\ToolShell.exe
+D:\TestProject\HttpTool\ToolShell\bin\Debug\ToolShell.pdb
+D:\TestProject\HttpTool\ToolShell\obj\x86\Debug\MainWindow.baml
+D:\TestProject\HttpTool\ToolShell\obj\x86\Debug\MainWindow.g.cs
+D:\TestProject\HttpTool\ToolShell\obj\x86\Debug\App.g.cs
+D:\TestProject\HttpTool\ToolShell\obj\x86\Debug\ToolShell_MarkupCompile.cache
+D:\TestProject\HttpTool\ToolShell\obj\x86\Debug\ToolShell.g.resources
+D:\TestProject\HttpTool\ToolShell\obj\x86\Debug\ToolShell.Properties.Resources.resources
+D:\TestProject\HttpTool\ToolShell\obj\x86\Debug\ToolShell.csproj.GenerateResource.Cache
+D:\TestProject\HttpTool\ToolShell\obj\x86\Debug\ToolShell.exe
+D:\TestProject\HttpTool\ToolShell\obj\x86\Debug\ToolShell.pdb

@@ -1,0 +1,235 @@
+﻿<Window x:Class="Tool12306.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:src="clr-namespace:Tool12306"
+        Title="MainWindow" Height="600" Width="800">
+    <Window.Resources>
+        <src:NumColorConvertor x:Key="ncc"/>
+        <src:NumTextConvertor x:Key="ntc"/>
+        <src:NumEnableConvertor x:Key="nec"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="我的12306"/>
+        </Menu>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button Content="登录" Height="23" HorizontalAlignment="Left" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click" />
+            <ComboBox Height="23" HorizontalAlignment="Left" Name="_ctlListForm" VerticalAlignment="Top" Width="120">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=Name}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ComboBox Height="23" HorizontalAlignment="Left" Name="_ctlListTo" VerticalAlignment="Top" Width="120">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=Name}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Button Content="查询明天" Height="23" HorizontalAlignment="Left" Name="button2" VerticalAlignment="Top" Width="130" Click="button2_Click" />
+            <Button Content="查询最后一天" Height="23" HorizontalAlignment="Left" Name="button4" VerticalAlignment="Top" Width="75" Click="button4_Click" />
+            <Button Content="Button" Height="23" HorizontalAlignment="Left" Name="button3" VerticalAlignment="Top" Width="75" Click="button3_Click" />
+
+            <ListBox Name="_ctlListTrainType" MinWidth="100" SelectionMode="Multiple">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                    <CheckBox Content="{TemplateBinding Content}"
+              ContentTemplate="{TemplateBinding ContentTemplate}"
+              ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
+              IsChecked="{Binding IsSelected, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <DataGrid Grid.Column="0" AutoGenerateColumns="False" Name="_ctlDataGrid" CanUserAddRows="False">
+                <DataGrid.GroupStyle>
+                    <GroupStyle>
+                        <GroupStyle.HeaderTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Path=Name}" FontWeight="Bold" Padding="3"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GroupStyle.HeaderTemplate>
+                        <GroupStyle.ContainerStyle>
+                            <Style TargetType="{x:Type GroupItem}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type GroupItem}">
+                                            <Expander IsExpanded="True">
+                                                <Expander.Header>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock Text="{Binding Path=Name}" />
+                                                        <TextBlock Text="{Binding Path=ItemCount}" Margin="8,0,4,0"/>
+                                                        <TextBlock Text="Items"/>
+                                                    </StackPanel>
+                                                </Expander.Header>
+                                                <ItemsPresenter />
+                                            </Expander>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </GroupStyle.ContainerStyle>
+                    </GroupStyle>
+                </DataGrid.GroupStyle>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="列车" Binding="{Binding Path=TrainName}" IsReadOnly="True" Width="*"/>
+                    <DataGridTextColumn Header="发站" Binding="{Binding Path=StartCity}" IsReadOnly="True" Width="*"/>
+                    <DataGridTextColumn Header="到站" Binding="{Binding Path=ArriveCity}" IsReadOnly="True" Width="*"/>
+                    <DataGridTextColumn Header="耗时" Binding="{Binding Path=TotalTime}" IsReadOnly="True" Width="*"/>
+                    <!--<DataGridTemplateColumn Header="商务座">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock Foreground="{Binding Path=Num_SWZ, Converter={StaticResource ncc}}" Text="{Binding Path=Num_SWZ, Converter={StaticResource ntc}}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="特等座">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock Foreground="{Binding Path=Num_TDZ, Converter={StaticResource ncc}}" Text="{Binding Path=Num_TDZ, Converter={StaticResource ntc}}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="一等座">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock Foreground="{Binding Path=Num_YDZ, Converter={StaticResource ncc}}" Text="{Binding Path=Num_YDZ, Converter={StaticResource ntc}}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="二等座">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock Foreground="{Binding Path=Num_EDZ, Converter={StaticResource ncc}}" Text="{Binding Path=Num_EDZ, Converter={StaticResource ntc}}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="高级软卧">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock Foreground="{Binding Path=Num_GJRW, Converter={StaticResource ncc}}" Text="{Binding Path=Num_GJRW, Converter={StaticResource ntc}}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="软卧">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Button Content="软卧" Name="_btnOrderRW" Click="_btnOrderRW_Click" Foreground="{Binding Path=Num_RW, Converter={StaticResource ncc}}" IsEnabled="{Binding Path=Num_RW, Converter={StaticResource nec}}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>-->
+                    <DataGridTemplateColumn Header="硬卧" Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Button Content="硬卧" Name="_btnOrderYW" Click="_btnOrderYW_Click" Foreground="{Binding Path=Num_YW, Converter={StaticResource ncc}}" IsEnabled="{Binding Path=Num_YW, Converter={StaticResource nec}}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <!--<DataGridTemplateColumn Header="软座">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock Foreground="{Binding Path=Num_YW, Converter={StaticResource ncc}}" Text="{Binding Path=Num_YW, Converter={StaticResource ntc}}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>-->
+                    <DataGridTemplateColumn Header="硬座" Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Button Content="硬座" Name="_btnOrderYZ" Click="_btnOrderYZ_Click" Foreground="{Binding Path=Num_YZ, Converter={StaticResource ncc}}" IsEnabled="{Binding Path=Num_YZ, Converter={StaticResource nec}}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="无座" Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <TextBlock Foreground="{Binding Path=Num_WZ, Converter={StaticResource ncc}}" Text="{Binding Path=Num_WZ, Converter={StaticResource ntc}}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <!--<DataGridTemplateColumn Header="其他" Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock Foreground="{Binding Path=Num_QT, Converter={StaticResource ncc}}" Text="{Binding Path=Num_QT, Converter={StaticResource ntc}}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>-->
+                </DataGrid.Columns>
+            </DataGrid>
+            <HeaderedContentControl Grid.Column="1" Header="身份证">
+                <ListBox Name="_ctlListPassenger" VerticalAlignment="Stretch" IsManipulationEnabled="False" SelectionMode="Multiple">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListBoxItem}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                        <CheckBox Content="{TemplateBinding Content}"
+              ContentTemplate="{TemplateBinding ContentTemplate}"
+              ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
+              IsChecked="{Binding IsSelected, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding passenger_name}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </HeaderedContentControl>
+        </Grid>
+     </Grid>
+</Window>
